@@ -4,7 +4,7 @@ import { MusicPlayer } from '../../MusicPlayer/MusicPlayer';
 import { Box, Text } from '../../core/primitives';
 import { space } from '../../core/tokens';
 
-export default () => {
+export const MusicPlayerScreen = () => {
 	return (
 		<Box>
 			<MusicPlayer />

@@ -5,7 +5,7 @@
 		<meta name="description" content="Gregory Dalton" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Gregory Land</title>
-		<link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 		<style>
 			@keyframes loading-bar {
 				from { margin-top: 24px; height: 0; }
@@ -18,9 +18,11 @@
 				box-sizing: border-box;
 			}
 
+			img {
+				display: inline-block;
+			}
+
 			body {
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: subpixel-antialiased;
 				font-family: sans-serif;
 				font-size: 16px;
 				line-height: 1rem;
@@ -28,7 +30,6 @@
 				min-height: 100vh;
 				padding: 0;
 				scroll-behavior: smooth;
-				text-rendering: optimizeLegibility;
 			}
 	
 			#app {

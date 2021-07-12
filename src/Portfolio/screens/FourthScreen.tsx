@@ -2,7 +2,7 @@ import React from 'react';
 import { MusicPlayer } from '../../MusicPlayer/MusicPlayer';
 import { Box, Text } from '../../core/primitives';
 
-export default () => (
+export const FourthScreen = () => (
 	<Box>
 		<MusicPlayer />
 		<Text.Caption>

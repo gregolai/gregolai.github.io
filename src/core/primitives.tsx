@@ -5,16 +5,16 @@ import { space } from './tokens';
 type BoxProps = React.ComponentPropsWithRef<typeof Box>;
 
 export const createComponent = (baseProps: BoxProps) => {
-	return forwardRef<HTMLElement, BoxProps>((props: BoxProps, ref) => (
-		<Box {...baseProps} {...props} ref={ref} />
-	)) as React.FunctionComponent<BoxProps>;
+	return forwardRef<HTMLElement, BoxProps>((props: BoxProps, ref) => {
+		return <Box {...baseProps} {...props} ref={ref} />;
+	}) as React.FC<BoxProps>;
 };
 
 export const createTextComponent = (() => {
 	return (baseProps: BoxProps) =>
 		createComponent({
 			textRendering: 'optimizeLegibility',
-			webkitFontSmoothing: 'antialiased',
+			webkitFontSmoothing: 'subpixel-antialiased',
 			mozOsxFontSmoothing: 'grayscale',
 			color: '#313131',
 			m: space._0,

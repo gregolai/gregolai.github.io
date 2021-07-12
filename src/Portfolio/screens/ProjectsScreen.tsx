@@ -40,9 +40,9 @@ const PlayInline = ({ height, src, title }) => {
 	);
 };
 
-export default () => {
+export const ProjectsScreen = () => {
 	return (
-		<Fragment>
+		<>
 			{[
 				{
 					name: 'SNEK',
@@ -130,8 +130,7 @@ export default () => {
 					},
 					images: [
 						{
-							title:
-								'Similar to "Warcraft 3" - five units are selected, but 3 peasants are grouped as active (as shown by the yellow icon border)',
+							title: 'Similar to "Warcraft 3" - five units are selected, but 3 peasants are grouped as active (as shown by the yellow icon border)',
 							url: 'img/projects/war1.png',
 							thumb: 'img/projects/thumbs/war1.jpg'
 						},
@@ -342,11 +341,8 @@ export default () => {
 									p={space._4}
 								>
 									<Text.Label>{title}</Text.Label>
-									<a href={`static/${url}`} style={{ display: 'block' }}>
-										<img
-											src={`static/${thumb}`}
-											style={{ display: 'block', height: '120px' }}
-										/>
+									<a href={url} style={{ display: 'block' }}>
+										<img src={thumb} style={{ display: 'block', height: '120px' }} />
 									</a>
 								</Flex>
 							))}
@@ -362,6 +358,6 @@ export default () => {
 					{proj.playInline && <PlayInline {...proj.playInline} />}
 				</Box>
 			))}
-		</Fragment>
+		</>
 	);
 };

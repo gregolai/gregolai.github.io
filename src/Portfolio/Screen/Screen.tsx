@@ -50,7 +50,6 @@ const Loading = () => {
 };
 
 const NAV_WIDTH = '160px';
-const FALLBACK = <Loading />;
 
 export const Screen: React.FC<Props> = ({ center = false, background, css, id, link, children }) => {
 	const [el, setEl] = useState(null);
@@ -62,21 +61,21 @@ export const Screen: React.FC<Props> = ({ center = false, background, css, id, l
 		}
 	}, [el]);
 
-	const Component = center ? Flex : Box;
 	return (
 		<Box ref={setEl} id={id} position="relative" css={css}>
 			<Box position="absolute" top="0px" left="0px" width="100%" height="100%">
 				{background}
 			</Box>
-			<Component
+			<Box
 				position="relative"
 				height="100%"
 				pl={NAV_WIDTH}
+				display={center && 'flex'}
 				alignItems={center && 'center'}
 				justifyContent={center && 'center'}
 			>
-				<Suspense fallback={FALLBACK}>{children}</Suspense>
-			</Component>
+				<Suspense fallback={<Loading />}>{children}</Suspense>
+			</Box>
 		</Box>
 	);
 };
