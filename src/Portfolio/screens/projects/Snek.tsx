@@ -1,7 +1,7 @@
 import React from 'react';
-import Screen from '../../Screen';
-import { Box, Flex, Text } from 'core/primitives';
-import { space } from 'core/tokens';
+import { Screen } from '../../Screen/Screen';
+import { Box, Flex, Text } from '../../../core/primitives';
+import { space } from '../../../core/tokens';
 /*
 				{
 					name: 'SNEK',

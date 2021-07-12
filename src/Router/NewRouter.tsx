@@ -2,7 +2,7 @@ import React, { useEffect, createContext, useState, useCallback, useContext } fr
 
 import { LocationListener, Location } from 'history';
 import { BrowserRouter, useHistory, Link, Route, NavLink } from 'react-router-dom';
-import { Button } from 'core/primitives';
+import { Button } from '../core/primitives';
 
 const PageRouterContext = createContext<{
 	links: string[];

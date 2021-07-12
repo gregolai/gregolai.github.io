@@ -3,7 +3,7 @@ import { startDrag } from 'pu2';
 import { Context } from '../MusicPlayerProvider';
 
 import MainPanelStore from './MainPanelStore';
-import { Box, Flex } from 'core/primitives';
+import { Box, Flex } from '../../core/primitives';
 
 export const DragHandle = () => {
 	const [isHovering, setHovering] = useState(false);

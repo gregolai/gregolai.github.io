@@ -1,7 +1,7 @@
-import React, { Suspense, useEffect, useState } from 'react';
-import Portfolio from '../Portfolio';
-import { Box, Flex, Text } from 'core/primitives';
-import { space } from 'core/tokens';
+import React, { Suspense, useContext, useEffect, useState } from 'react';
+import { Portfolio, PortfolioContext } from '../Portfolio';
+import { Box, Flex, Text } from '../../core/primitives';
+import { space } from '../../core/tokens';
 
 interface LinkProps {
 	pathname: string;
@@ -52,9 +52,9 @@ const Loading = () => {
 const NAV_WIDTH = '160px';
 const FALLBACK = <Loading />;
 
-const Screen: React.FC<Props> = ({ center = false, background, css, id, link, children }) => {
+export const Screen: React.FC<Props> = ({ center = false, background, css, id, link, children }) => {
 	const [el, setEl] = useState(null);
-	const { registerScreen } = Portfolio.useContext();
+	const { registerScreen } = useContext(PortfolioContext);
 
 	useEffect(() => {
 		if (el && link) {
@@ -80,4 +80,3 @@ const Screen: React.FC<Props> = ({ center = false, background, css, id, link, ch
 		</Box>
 	);
 };
-export default Screen;

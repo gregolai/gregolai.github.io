@@ -11,7 +11,7 @@ const Context = React.createContext<Dimensions>(null);
 
 const getDimensions = () => [window.innerWidth, window.innerHeight] as Dimensions;
 
-const WindowInnerDimensionsProvider = ({ children }: Props) => {
+export const WindowInnerDimensionsProvider = ({ children }: Props) => {
 	const [dimensions, setDimensions] = useRafState<Dimensions>(getDimensions());
 
 	useLayoutEffect(() => {
@@ -47,5 +47,3 @@ const WindowInnerDimensionsProvider = ({ children }: Props) => {
 };
 
 export const useWindowInnerDimensions = () => useContext(Context);
-
-export default WindowInnerDimensionsProvider;

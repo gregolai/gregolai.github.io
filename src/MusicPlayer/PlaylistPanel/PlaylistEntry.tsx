@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '../MusicPlayerProvider';
-import { Box, Button, Flex } from 'core/primitives';
+import { Box, Button, Flex } from '../../core/primitives';
 
 const Progress = ({ percent }) => {
 	return (

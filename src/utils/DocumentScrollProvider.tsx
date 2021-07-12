@@ -7,7 +7,7 @@ interface Props {
 
 const Context = React.createContext<number>(null);
 
-const DocumentScrollProvider = ({ children }: Props) => {
+export const DocumentScrollProvider = ({ children }: Props) => {
 	const [scrollY, setScrollY] = useRafState(document.scrollingElement.scrollTop);
 
 	useLayoutEffect(() => {
@@ -29,5 +29,3 @@ const DocumentScrollProvider = ({ children }: Props) => {
 };
 
 export const useDocumentScrollY = () => useContext(Context);
-
-export default DocumentScrollProvider;

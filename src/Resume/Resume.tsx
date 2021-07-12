@@ -4,7 +4,7 @@ import { Job } from './Job';
 import { Text, Box, Ul, Li, Flex } from './primitives';
 import { space } from './tokens';
 
-export default (props) => (
+export const Resume = (props) => (
 	<Box
 		backgroundColor="white"
 		boxShadow="4px 4px 2px rgba(0,0,0,0.3)"

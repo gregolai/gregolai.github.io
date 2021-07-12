@@ -5,7 +5,7 @@ import { SongDetails } from './SongDetails';
 import { Record } from './Record';
 import { DragHandle } from './DragHandle';
 import MainPanelStore from './MainPanelStore';
-import { Box, Button, Flex } from 'core/primitives';
+import { Box, Button, Flex } from '../../core/primitives';
 
 const createSvgStyle = (width: string) => ({
 	width,
@@ -119,7 +119,7 @@ const AuxButton = ({ children }) => (
 	</Button>
 );
 
-const MainPanel = (props) => {
+const _MainPanel = (props) => {
 	const { isPlaylistOpen, setPlaylistOpen, knockAt, isPlaying, setPlaying } = useContext(Context);
 	const { dragY, isDragging } = useContext(MainPanelStore.Context);
 
@@ -178,8 +178,8 @@ const MainPanel = (props) => {
 	);
 };
 
-export default (props) => (
+export const MainPanel = (props) => (
 	<MainPanelStore>
-		<MainPanel {...props} />
+		<_MainPanel {...props} />
 	</MainPanelStore>
 );

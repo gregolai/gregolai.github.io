@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Flex } from 'core/primitives';
+import { Button, Flex } from '../../core/primitives';
 
 interface PrimaryButtonProps {
 	children: React.ReactElement;

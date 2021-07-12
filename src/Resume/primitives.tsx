@@ -1,6 +1,6 @@
-import { createTextComponent, createComponent, Text as _CoreText } from 'core/primitives';
+import { createTextComponent, createComponent, Text as _CoreText } from '../core/primitives';
 import { space } from './tokens';
-export { Box, Button, Flex } from 'core/primitives';
+export { Box, Button, Flex } from '../core/primitives';
 
 export const Text = {
 	..._CoreText,

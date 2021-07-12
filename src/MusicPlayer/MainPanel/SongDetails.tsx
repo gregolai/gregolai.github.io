@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '../MusicPlayerProvider';
-import { Flex, Box } from 'core/primitives';
+import { Flex, Box } from '../../core/primitives';
 
 export const SongDetails = (props) => {
 	const { currentSong, isPlaylistOpen } = useContext(Context);

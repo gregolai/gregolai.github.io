@@ -1,8 +1,9 @@
 {
-    "parser": "typescript",
-    "printWidth": 110,
-    "singleQuote": true,
-    "tabWidth": 4,
-    "trailingComma": "none",
-    "useTabs": true
+	"endOfLine": "crlf",
+	"parser": "typescript",
+	"printWidth": 110,
+	"singleQuote": true,
+	"tabWidth": 4,
+	"trailingComma": "none",
+	"useTabs": true
 }

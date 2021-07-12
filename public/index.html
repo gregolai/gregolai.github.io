@@ -4,45 +4,46 @@
 		<meta charset="utf-8" />
 		<meta name="description" content="Gregory Dalton" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title><%= htmlWebpackPlugin.options.title %></title>
+		<title>Gregory Land</title>
 		<link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon" />
-		
 		<style>
 			@keyframes loading-bar {
 				from { margin-top: 24px; height: 0; }
 				to { margin-top: 0; height: 24px; }
 			}
-			*, *::before, *::after {
+
+			*,
+			*::before,
+			*::after {
 				box-sizing: border-box;
 			}
+
 			body {
-				padding: 0;
-				margin: 0;
-				
-				min-height: 100vh;
-				scroll-behavior: smooth;
-				line-height: 1.5;
-				
-				text-rendering: optimizeLegibility;
-				-webkit-font-smoothing: subpixel-antialiased;
 				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: subpixel-antialiased;
 				font-family: sans-serif;
 				font-size: 16px;
+				line-height: 1rem;
+				margin: 0;
+				min-height: 100vh;
+				padding: 0;
+				scroll-behavior: smooth;
+				text-rendering: optimizeLegibility;
 			}
-			
+	
 			#app {
-				overflow-x: hidden;
-				overflow-y: auto;
 				background-color: rgb(214, 229, 244);
 				font-family: 'Helvetica Neue', Arial, sans-serif;
 				min-width: 980px;
+				overflow-x: hidden;
+				overflow-y: auto;
 			}
 		</style>
-			
-		<!-- TESTING -->
-		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,600,700|Lato:300,400,700,900|Markazi+Text:400,500,600,700|Nanum+Myeongjo|Odibee+Sans|Old+Standard+TT:400,700|Open+Sans:300,400,600,700|Playfair+Display:400,500,600,700,800,900|Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div id="app"></div>
+		<div id="app" />
+		<script src="react.development.js"></script>
+		<script src="react-dom.development.js"></script>
+		<script src="js/main.js" type="module"></script>
 	</body>
-	</html>
+</html>

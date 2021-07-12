@@ -1,10 +1,10 @@
-import React, { useContext, createContext, Component } from 'react';
-import DocumentScrollProvider from './utils/DocumentScrollProvider';
-import WindowInnerDimensionsProvider from './utils/WindowInnerDimensionsProvider';
-import Portfolio from './Portfolio';
-import Resume from './Resume';
+import React, { createContext } from 'react';
+import { DocumentScrollProvider } from './utils/DocumentScrollProvider';
+import { WindowInnerDimensionsProvider } from './utils/WindowInnerDimensionsProvider';
+import { Portfolio } from './Portfolio/Portfolio';
+import { Resume } from './Resume/Resume';
 
-const Context = createContext({
+export const AppContext = createContext({
 	printResume: () => {}
 });
 
@@ -25,7 +25,7 @@ const printResume = () => {
 	});
 };
 
-const App = () => {
+export const App = () => {
 	// SHOW RESUME WHEN IN IFRAME
 	if (window.self !== window.top) {
 		return <Resume />;
@@ -34,18 +34,14 @@ const App = () => {
 	return (
 		<DocumentScrollProvider>
 			<WindowInnerDimensionsProvider>
-				<Context.Provider
+				<AppContext.Provider
 					value={{
 						printResume
 					}}
 				>
 					<Portfolio />
-				</Context.Provider>
+				</AppContext.Provider>
 			</WindowInnerDimensionsProvider>
 		</DocumentScrollProvider>
 	);
 };
-
-export const useApp = () => useContext(Context);
-
-export default App;

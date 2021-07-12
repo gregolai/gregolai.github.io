@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
-
-import Resume from 'Resume';
-import { useApp } from 'App';
+import React, { Fragment, useContext } from 'react';
+import { Resume } from '../../Resume/Resume';
+import { AppContext } from '../../App';
 
 export default () => {
-	const { printResume } = useApp();
+	const { printResume } = useContext(AppContext);
 
 	return (
 		<Fragment>

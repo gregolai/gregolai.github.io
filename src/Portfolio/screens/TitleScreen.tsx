@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Text, Flex } from 'core/primitives';
-import { space } from 'core/tokens';
+import React from 'react';
+import { Box, Text, Flex } from '../../core/primitives';
+import { space } from '../../core/tokens';
 
 export default () => {
 	return (

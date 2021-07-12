@@ -1,9 +1,23 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { Box, Flex } from 'core/primitives';
+import { Box, Flex } from '../../core/primitives';
 
 import { Context } from '../MusicPlayerProvider';
 
-const css = require('./Record.css');
+/**
+ * From Record.css
+ */
+{
+	const styleEl = document.createElement('style');
+	document.head.appendChild(styleEl);
+
+	styleEl.sheet.insertRule(
+		`@keyframes rotating {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}`,
+		0
+	);
+}
 
 export const Record = (props) => {
 	const { currentSong, isPlaying, setPlaying, isPlaylistOpen } = useContext(Context);
@@ -40,7 +54,7 @@ export const Record = (props) => {
 		>
 			<Flex
 				{...centerChildren}
-				animation={isPlaying && `${css.rotating} 8s linear infinite`}
+				animation={isPlaying && `rotating 8s linear infinite`}
 				background="radial-gradient(circle at 100% 0%, #205c92 0%, transparent 60%, transparent 100%), radial-gradient(circle at 0% 100%, purple 0%, transparent 60%, transparent 100%)"
 				border="1px solid rgba(0,0,0,0.2)"
 				borderRadius="50%"
@@ -65,7 +79,7 @@ export const Record = (props) => {
 					>
 						<Flex
 							{...centerChildren}
-							animation={isPlaying && `${css.rotating} 6s linear infinite`}
+							animation={isPlaying && `rotating 6s linear infinite`}
 							background="linear-gradient(0deg, black, white)"
 							border="2px solid white"
 							borderRadius="50%"

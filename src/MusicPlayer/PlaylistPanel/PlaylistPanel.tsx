@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { PlaylistEntry } from './PlaylistEntry';
 import { Context } from '../MusicPlayerProvider';
-import { Box, Flex } from 'core/primitives';
+import { Box, Flex } from '../../core/primitives';
 
 export const PlaylistPanel = () => {
 	const { currentAlbum } = useContext(Context);

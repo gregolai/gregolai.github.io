@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'core/primitives';
+import { Box } from '../../core/primitives';
 
 interface Props {
 	color: string;
@@ -11,7 +11,7 @@ interface Props {
 	height?: number | string;
 }
 
-export const ScreenSplat: React.FC<Props> = ({
+export const Splat: React.FC<Props> = ({
 	color,
 	colorPos = '0%',
 

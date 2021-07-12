@@ -1,6 +1,6 @@
 import React from 'react';
-import MusicPlayer from 'MusicPlayer';
-import { Box, Text } from 'core/primitives';
+import { MusicPlayer } from '../../MusicPlayer/MusicPlayer';
+import { Box, Text } from '../../core/primitives';
 
 export default () => (
 	<Box>

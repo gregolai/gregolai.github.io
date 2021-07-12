@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 import Screens from './Screens';
-import { Box } from 'core/primitives';
+import { Box } from '../core/primitives';
 import { PageRouter } from '../Router/NewRouter';
 import Nav from './Nav';
 import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
@@ -18,13 +18,13 @@ interface ScreenProps {
 	link: LinkProps;
 }
 
-const Context = createContext({
+export const PortfolioContext = createContext({
 	registerScreen: (opts: ScreenProps) => {}
 });
 
 const TRANSITION_DURATION = 300;
 
-const Portfolio = () => {
+export const Portfolio = () => {
 	const [screens, setScreens] = useState<ScreenProps[]>([]);
 
 	const [currentScreen, setCurrentScreen] = useState(null);
@@ -102,7 +102,7 @@ const Portfolio = () => {
 				setCurrentScreen(nextScreen);
 			}}
 		>
-			<Context.Provider
+			<PortfolioContext.Provider
 				value={{
 					registerScreen: (screen: ScreenProps) => {
 						setScreens((state) => [...state, screen]);
@@ -117,9 +117,7 @@ const Portfolio = () => {
 					<Screens />
 				</Box>
 				<Nav screens={screens} currentScreen={currentWindowScreen} />
-			</Context.Provider>
+			</PortfolioContext.Provider>
 		</PageRouter>
 	);
 };
-Portfolio.useContext = () => useContext(Context);
-export default Portfolio;

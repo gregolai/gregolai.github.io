@@ -1,34 +1,31 @@
 import React, { lazy, Fragment } from 'react';
 import TitleScreen from './screens/TitleScreen';
-// import MusicPlayerScreen from './screens/MusicPlayerScreen';
-// import LoremIpsumScreen from './screens/LoremIpsumScreen';
-// import FourthScreen from './screens/FourthScreen';
-// import ResumeScreen from './screens/ResumeScreen';
-// import ProjectsScreen from './screens/ProjectsScreen';
-import Screen from './Screen';
-import { space } from 'core/tokens';
-import { Box } from 'core/primitives';
+import { Screen } from './Screen/Screen';
+import { space } from '../core/tokens';
+import { Box } from '../core/primitives';
 
 // Height not initially known
 import ResumeScreen from './screens/ResumeScreen';
 import ProjectsScreen from './screens/ProjectsScreen';
-import { ScreenSplat } from './Screen/ScreenSplat';
+import { Splat } from './Screen/Splat';
 import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
 
 import Snek from './screens/projects/Snek';
 
-const MusicPlayerScreen = lazy(() =>
-	import(
-		/* webpackChunkName: "MusicPlayerScreen" */
-		'./screens/MusicPlayerScreen'
-	)
+const MusicPlayerScreen = lazy(
+	() =>
+		import(
+			/* webpackChunkName: "MusicPlayerScreen" */
+			'./screens/MusicPlayerScreen'
+		)
 );
 
-const FourthScreen = lazy(() =>
-	import(
-		/* webpackChunkName: "FourthScreen" */
-		'./screens/FourthScreen'
-	)
+const FourthScreen = lazy(
+	() =>
+		import(
+			/* webpackChunkName: "FourthScreen" */
+			'./screens/FourthScreen'
+		)
 );
 
 const TitleImage = () => {
@@ -80,13 +77,7 @@ export default () => (
 			}}
 			background={
 				<Fragment>
-					<ScreenSplat
-						color="rgba(255,255,255,0.5)"
-						width="1800px"
-						x="200px"
-						y="600px"
-						colorPos="20%"
-					/>
+					<Splat color="rgba(255,255,255,0.5)" width="1800px" x="200px" y="600px" colorPos="20%" />
 					{/* DIAGONAL LINE BACK */}
 					<div
 						style={{
@@ -119,8 +110,8 @@ export default () => (
 			}}
 			background={
 				<Fragment>
-					<ScreenSplat color="rgba(255,255,255,0.3)" x="20%" y="20%" width={900} />
-					<ScreenSplat color="rgba(255,255,255,0.3)" x="80%" y="80%" width={1400} />
+					<Splat color="rgba(255,255,255,0.3)" x="20%" y="20%" width={900} />
+					<Splat color="rgba(255,255,255,0.3)" x="80%" y="80%" width={1400} />
 
 					{/* DIAGONAL LINE BACK */}
 					<div
@@ -155,9 +146,9 @@ export default () => (
 			}}
 			background={
 				<Fragment>
-					<ScreenSplat x="50%" y="0%" color="rgba(255,255,255,0.4)" width="1200px" />
-					<ScreenSplat x="10%" y="70%" color="rgba(255,0,255,0.2)" width="2100px" />
-					<ScreenSplat x="80%" y="30%" color="rgba(255,137,60,0.2)" width="2100px" />
+					<Splat x="50%" y="0%" color="rgba(255,255,255,0.4)" width="1200px" />
+					<Splat x="10%" y="70%" color="rgba(255,0,255,0.2)" width="2100px" />
+					<Splat x="80%" y="30%" color="rgba(255,137,60,0.2)" width="2100px" />
 				</Fragment>
 			}
 			center

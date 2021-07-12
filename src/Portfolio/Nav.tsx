@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Flex, Text } from 'core/primitives';
-import { space } from 'core/tokens';
+import { Box, Flex, Text } from '../core/primitives';
+import { space } from '../core/tokens';
 import { PageLink } from '../Router/NewRouter';
 
 const Nav = ({ currentScreen, screens }) => {

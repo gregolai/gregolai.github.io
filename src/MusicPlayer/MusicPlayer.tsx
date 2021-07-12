@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
-import MainPanel from './MainPanel';
-import { PlaylistPanel } from './PlaylistPanel';
+import { MainPanel } from './MainPanel/MainPanel';
+import { PlaylistPanel } from './PlaylistPanel/PlaylistPanel';
 import { Provider, Context } from './MusicPlayerProvider';
-import { Box } from 'core/primitives';
+import { Box } from '../core/primitives';
 
-const MusicPlayer = () => {
+const _MusicPlayer = () => {
 	const { setPlayerRef, knockStyle, knockAt } = useContext(Context);
 
 	return (
@@ -26,10 +26,10 @@ const MusicPlayer = () => {
 };
 
 // https://dribbble.com/shots/9651842-Player-app-UI-animation
-export default () => {
+export const MusicPlayer = () => {
 	return (
 		<Provider>
-			<MusicPlayer />
+			<_MusicPlayer />
 		</Provider>
 	);
 };

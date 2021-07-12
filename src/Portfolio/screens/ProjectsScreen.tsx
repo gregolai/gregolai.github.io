@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
-import { Flex, Box, Text, Button } from 'core/primitives';
-import { space } from 'core/tokens';
+import { Flex, Box, Text, Button } from '../../core/primitives';
+import { space } from '../../core/tokens';
 
 const PlayInline = ({ height, src, title }) => {
 	const [isOpen, setOpen] = useState(false);
